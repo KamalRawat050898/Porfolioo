@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root {
+        --main-color: rgba(0, 0, 0, 0.25);
+        --text-color: #fff;
+        --back-color: black;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-size: 64.5%;
+        font-family: -apple-system, ".SFNSText-Regular",
+            "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+    }
+
+    .checkbox {
+        position: relative;
+        display: inline-block;
+        height: 2rem;
+        width: 4rem;
+        background: var(--main-color);
+        border-radius: 2rem;
+
+    }
+
+    .checkbox::after {
+        content: "";
+        position: absolute;
+        top: .1rem;
+        left: .1rem;
+        width: 1.8rem;
+        height: 1.8rem;
+        border-radius: 50%;
+        background-color: var(--text-color);
+        transition: all 0.3s linear;
+    }
+
+    input[type="checkbox"]:checked+.checkbox::after {
+        translate: 2rem 0;
+
+    }
+
+    .checks {
+        display: none
+    }
+
+    .dark-mode {
+        background-color: var(--back-color);
+        color: var(--text-color);
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .header nav>ul {
+        display: flex;
+        list-style-type: none;
+        gap: 2rem;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .Developer span:first-child:hover{
+        color: blueviolet;
+    } 
+</style>
+
+<body>
+    <header class="header">
+        <h1>PortFolio</h1>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Contact</li>
+                <li>About</li>
+                <li>Skills</li>
+                <li><input type="checkbox" name="checkbox" id="toggle" class="checks" />
+                    <label for="toggle" class="checkbox">
+
+                    </label>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="sidebar">
+        
+            <h2 >Hi,I am</h2>
+         <h2 class="Developer"><span>K</span><span>a</span><span>m</span><span>a</span><span>t</span> <span>R</span><span>a</span><span>w</span><span>a</span><span>t</span></h2>
+       <h2>Forntend Developer</h2>
+</div>
+</main>
+    <script>
+
+
+        let toogle_btn = document.getElementById("toggle")
+        toogle_btn.addEventListener("change", () => {
+            console.log(toogle_btn.checked)
+            if (toogle_btn.checked) {
+                document.body.classList.add("dark-mode");
+            } else {
+                document.body.classList.remove("dark-mode")
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

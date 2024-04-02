@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .common {
+            height: 212px;
+            width: 280px;
+            background-color: red;
+            background-image: url(./th.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+            position: relative;
+            margin: 250px auto;
+            overflow: hidden;
+        }
+
+        .overlay {
+            height: 212px;
+            width: 280px;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: -212px;
+            left: 0;
+            transition-property: all;
+            transition-duration: 2s;
+            transition-timing-function: ease-out;
+        }
+
+        .box:hover .overlay{
+            top: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="common box">
+        <div class="overlay"></div>
+    </div>
+</body>
+
+</html>
